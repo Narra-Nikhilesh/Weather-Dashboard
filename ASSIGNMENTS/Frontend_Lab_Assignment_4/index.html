@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopDynamic | JavaScript E-commerce</title>
+    <meta name="description" content="A dynamic e-commerce product page built with HTML, CSS, Bootstrap and vanilla JavaScript.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid page-container">
+                <a class="navbar-brand brand" href="#">
+                    <span class="brand-mark">S</span>
+                    <span>Shop<span class="brand-light">Dynamic</span></span>
+                </a>
+                <div class="nav-links d-none d-md-flex">
+                    <a href="#products">Home</a>
+                    <a href="#products">Shop</a>
+                    <a href="#about">About</a>
+                </div>
+                <button class="cart-top-button" type="button" id="mobileCartButton" aria-label="Open shopping cart">
+                    <span aria-hidden="true">🛒</span>
+                    <span class="cart-top-label">Cart</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-fluid page-container">
+        <section class="welcome-section">
+            <div>
+                <p class="eyebrow">EVERYDAY ESSENTIALS</p>
+                <h1>Find something <span>you'll love.</span></h1>
+                <p class="welcome-copy">Thoughtful picks for your everyday life — all in one place.</p>
+            </div>
+            <div class="welcome-pill">✨ Great finds. Great prices.</div>
+        </section>
+
+        <div class="shop-layout">
+            <section class="products-section" id="products" aria-labelledby="productsHeading">
+                <div class="section-heading">
+                    <div>
+                        <h2 id="productsHeading">Shop products</h2>
+                        <p><span id="productCount">7</span> products selected for you</p>
+                    </div>
+                    <div class="shop-controls">
+                        <label class="search-box">
+                            <span aria-hidden="true">⌕</span>
+                            <input type="search" id="searchInput" placeholder="Search products..." aria-label="Search products">
+                        </label>
+                        <select id="categoryFilter" class="form-select category-select" aria-label="Filter by category">
+                            <option value="All">All categories</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="product-grid" id="productGrid"></div>
+                <div class="no-results d-none" id="noResults">
+                    <div class="no-results-icon">🔎</div>
+                    <h3>No products found</h3>
+                    <p>Try another search or category.</p>
+                </div>
+            </section>
+
+            <aside class="cart-panel" id="cartPanel" aria-labelledby="cartHeading">
+                <div class="cart-header">
+                    <div>
+                        <h2 id="cartHeading">Shopping cart</h2>
+                        <p><span id="cartItemCount">0</span> items in your bag</p>
+                    </div>
+                    <button class="close-cart d-lg-none" id="closeCartButton" type="button" aria-label="Close cart">×</button>
+                </div>
+
+                <div class="cart-items" id="cartItems">
+                    <div class="cart-empty">
+                        <div class="empty-bag">🛍️</div>
+                        <h3>Your cart is empty</h3>
+                        <p>Add something you like to get started.</p>
+                    </div>
+                </div>
+
+                <div class="cart-summary">
+                    <div class="summary-line">
+                        <span>Items</span>
+                        <span id="summaryQuantity">0</span>
+                    </div>
+                    <div class="summary-line">
+                        <span>Delivery</span>
+                        <span class="free-delivery">FREE</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>Grand total</span>
+                        <strong id="grandTotal">₹0</strong>
+                    </div>
+                    <button class="checkout-button" id="checkoutButton" type="button" disabled>
+                        Proceed to checkout <span aria-hidden="true">→</span>
+                    </button>
+                    <p class="secure-note">🔒 Secure checkout demo</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="toast-message" id="toastMessage" role="status" aria-live="polite"></div>
+
+    <footer class="site-footer" id="about">
+        <div class="container-fluid page-container">
+            <span>© 2026 ShopDynamic</span>
+            <span>Made with HTML, CSS, Bootstrap & JavaScript</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
